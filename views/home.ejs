@@ -1,0 +1,214 @@
+<%- include('./header.ejs') %>
+    <div class="carousel slide " data-bs-ride="carousel" id="s">
+        <div class="carousel-indicators"> <!--indicators -->
+            <button type="button" data-bs-target="#s" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="2"></button>
+
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="6000">
+                <img src="images/slider1.webp" class="w-100" style="height: 570px;">
+                <div class="carousel-caption">
+                    <h1></h1>
+                </div>
+
+            </div>
+            <div class="carousel-item " data-bs-interval="4000">
+                <img src="images/slider2.jpg" class="w-100" style="height: 570px;">
+
+            </div>
+            <div class="carousel-item " data-bs-interval="4000">
+                <img src="images/slider3.jpg" class="w-100" style="height: 570px;">
+
+            </div>
+
+
+
+        </div><!--carousel-inner end-->
+
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#s" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#s" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div> <!--carousel slide end-->
+    <div class="container-fluid green">
+        <div class="container">
+            <form action="" method="post">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="search" class="frm"
+                                    placeholder="Search Property By City , Area">
+                            </div>
+                            <div class="col-md-6 search">
+                                <button type="submit" class="btn btn-danger">Search</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div> <!--row end-->
+            </form>
+        </div> <!--container end-->
+    </div> <!--container-fluid end-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="" alt="">
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="images/helper.gif" alt="" class="w-50">
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div> <!--row end-->
+    </div> <!--container end-->
+    <div class="bg-light rounded p-3">
+        <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+            <div class="row">
+                <% c.forEach((item)=>{ %>
+                    <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="<%= item.image.url %>"
+                            alt="" width="517" height="317">
+                        <div class="card-body">
+                            <h5 class="ro"><%= item.name %></h5>
+                            <center>
+                                <button class="big">
+                                    <a href="/propertylist/<%= item.name %>">Read More</a>
+                                </button>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                    <%}) %>
+                
+            </div> <!--row end-->
+        </div> <!-- bg-white rounded-->
+
+    </div> <!--bg-light rounded end-->
+    <!--Count start-->
+    <div class="container bg-success mt-5">
+        <div class="row">
+            <div class="col-md-4 count">
+                <h1>
+                    <span class="counter">1,116</span>
+                </h1>
+                <h3 class="text-white">Happy Customers</h3>
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="col-md-4 count">
+                <h1>
+                    <span class="counter">1,635</span>
+                </h1>
+                <h3 class="text-white">Renters</h3>
+                <i class="fa-solid fa-user-plus"></i>
+            </div>
+            <div class="col-md-4 count">
+                <h1>
+                    <span class="counter">8,959</span>
+                </h1>
+                <h3 class="text-white">Followers</h3>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+        </div> <!--row end-->
+    </div> <!--container end-->
+    <!--count end-->
+
+
+    <!--Property part-->
+    <div class="container mt-5">
+        <div class="bg-light rounded p-3">
+            <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                <div class="mg-t-100">
+                    <h1 class="show">Showing Best Property For You</h1>
+                </div>
+                <div class="snav">
+                    <ul class="snav-style">
+                        <li>
+                            <a href="" class="secnav">
+                                home
+                                <i class="fa fa-arrow-right">
+                                </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="secnav">&nbsp;property</a>
+                        </li>
+                        <li>
+                            <a href="" class="secnav"
+                                style="color:  #e72e77; font-size: 15px; font-weight: 500;">&nbsp;/&nbsp; MOST POPULAR
+                                PROPERTY IN GWALIOR</a>
+                        </li>
+
+                    </ul> <!--snav-style end-->
+                </div> <!--snav end-->
+                <h4 class="sha">showing a best Room & Flat for you !!</h4>
+                <div class="row">
+                    <% p.forEach((item)=>{ %>
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="pbox">
+                                <a href="propertiesdetail.html">
+                                    <img src="<%= item.image.url %>"
+                                        alt="" style="height: 250px; width: 400px;">
+                                </a>
+                                <div
+                                    class="bg-success rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                    Rent</div>
+                                <div class="bg-success rounded position-absolute end-0 bottom-0 m-4 py-0 px-1">
+                                    <a href="" class="btn btn-sccess text-white">Available</a>
+                                </div>
+                                <div
+                                    class="bg-white rounded text-success position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
+                                    Aparment</div>
+                            </div>
+                            <div class="p-4 pb-0">
+                                <h5 class="text-success mb-3"><%= item.price %></h5>
+                                <a href="" class="d-block  mb-2 text-decoration-none"><%= item.name %></a>
+                                <p>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <%= item.address %>
+                                </p>
+                            </div>
+                            <div class="d-flex">
+                                <small class="flex-fill text-center border-end py-2">
+                                    <i class="fa fa-ruler-combined text-success me-2"></i>
+                                    2bhk
+                                </small>
+                                <small class="flex-fill text-center py-2">
+                                    <i class="fa-solid fa-hand-holding-heart"></i>
+                                    Fully Furnished
+                                </small>
+                                <small class="flex-fill text-center py-2">
+                                    <i class="fa fa-bath me-2"></i>
+                                    2 Lath,bath
+                                </small>
+                            </div> <!--d-flex-->
+                            <div class="text-center">
+                                <a class="btn btn-success mt-3" href="/details/<%= item._id %>">View details</a>
+                            </div>
+                        </div>
+                        <%}) %>
+                            <div class="col-12 text-center">
+                                <a class="btn btn-success py-3 px-5 mt-3 mb-3" href="">Browse More Property</a>
+                            </div>
+                </div><!--row end-->
+            </div>
+
+        </div>
+    </div> <!--container end-->
+
+
+
+
+    <!--property part end-->
+    <%- include('./footer.ejs') %>

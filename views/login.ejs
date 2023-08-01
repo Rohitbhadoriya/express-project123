@@ -1,0 +1,59 @@
+<%- include ('./header.ejs') %>
+  <!--login form start-->
+  <div class="container-fluid bg-success">
+    <br>
+    <br>
+    <div class="container py-5">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-10">
+          <div class="card">
+            <div class="row">
+              <div class="col-md-6 col-lg-6 d-none d-md-block">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIJySexvPcQ94zCzaSrjZMGE28dkyNv3kKWJ-UFbMgVCBYQJH9scFzK1Zg37FhCipcKR0&usqp=CAU"
+                  alt="" style="height: 470px; width: 660px;" class="img-fluid">
+              </div>
+              <div class="col-md-6 align-items-center ">
+                <div class="card-body bg-dark">
+                  <div class=" align-items-center mb-3 pb-1 text-white ">
+                    <img src="images/logo.png" alt="" class="img-fluid" style="width: 30px; height: 30px;">
+                    <h2 class="text-success text-center m-0 px-3">BROKER PORTAL</h2>
+                    <p>Sign into your admin account</p>
+                    <div class="alert alert-danger">unauthrized admin</div>
+                    <% if(message1.length>0){ %>
+                      <div class="alert alert-danger">
+                        <%= message1 %>
+                      </div>
+                      <%}%>
+                      <% if(message2.length>0){ %>
+                        <div class="alert alert-danger">
+                          <%= message2 %>
+                        </div>
+                        <%}%>
+                        <form action="/verifylogin" method="post">
+                          <div class="mb-4 text-white">
+                            <label class="form-label">Email address</label>
+                            <input type="email" name="email" placeholder="email" class="form-control">
+                          </div>
+                          <div class="mb-4 text-white">
+                            <label class="form-label">password</label>
+                            <input type="password" name="password" placeholder="password" class="form-control">
+                          </div>
+                          <div class="mb-4 text-center">
+                            <button type="submit" class="btn btn-success">Login</button>
+                          </div>
+                          <div clas="text-center">
+                            <p class="text-center">Only Admin login is allow</p>
+                          </div>
+                        </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!--conatiner end-->
+
+  </div><!--container end-->
+  <%- include ('./footer.ejs') %>

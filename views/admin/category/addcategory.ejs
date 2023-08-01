@@ -1,0 +1,87 @@
+
+<%- include ('../header.ejs') %>
+<%- include ('../sidebar.ejs') %>
+ 
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <h1>Hello Rohit</h1>
+    <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Display Category</h3>
+          <button data-toggle="modal" data-target="#modal-default" class="btn btn-success" style="float: right;">Add Category</button>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Image</th>
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+              <% d.forEach((item)=>{ %>
+                <tr>
+                  <td><%= item._id%></td>
+                  <td><%= item.name%></td>
+
+                  <td>
+                    <img src="<%= item.image.url %>" alt="" width="100">
+                  </td>
+                  <td>
+                    <a href="/admin/categoryView/<%= item._id%>" class="btn btn-success">View</a>
+                    <a href="/admin/categoryedit/<%= item._id%>" class="btn btn-info">Edit</a>
+                    <a href="/admin/deletecategory/<%= item._id%>" class="btn btn-danger">Delete</a>
+                  </td>
+                </tr>
+              <%}) %>
+            </tbody>
+            <tfoot>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!--Modal tag Start -->
+      <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add Property</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="/admin/insertcategory" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label>Images</label>
+                  <input type="file" name="image" class="form-control" required>
+                </div>
+                
+                <button class="btn btn-success">Submit</button>
+              </form> <!--Form end-->
+            </div>
+            
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+      <!-- /.card -->
+    </div>
+
+  <!-- /.content-wrapper -->
+
+
+  <%- include ('../footer.ejs') %>
+

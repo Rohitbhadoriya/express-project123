@@ -1,0 +1,41 @@
+
+<%- include ('../header.ejs') %>
+<%- include ('../sidebar.ejs') %>
+ 
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <h1>Hello Rohit</h1>
+    <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Display Edit</h3>
+          <button data-toggle="modal" data-target="#modal-default" class="btn btn-success" style="float: right;">Add About</button>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form action="/admin/updateedit/<%=d._id%>" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" value="<%=d.name%>" name="name" class="form-control" required>
+                </div>
+                
+                
+                <button class="btn btn-success">Update</button>
+              </form> <!--Form end-->
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!--Modal tag Start -->
+      
+      <!-- /.modal -->
+      <!-- /.card -->
+    </div>
+
+  <!-- /.content-wrapper -->
+
+
+  <%- include ('../footer.ejs') %>
+
+
+

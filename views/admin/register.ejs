@@ -1,0 +1,66 @@
+<%- include('../header.ejs') %>
+  <!--login form start-->
+  <div class="container-fluid bg-success">
+    <br>
+    <br>
+    <div class="container py-5">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-10">
+          <div class="card">
+            <div class="row">
+              <div class="col-md-6 col-lg-6 d-none d-md-block">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIJySexvPcQ94zCzaSrjZMGE28dkyNv3kKWJ-UFbMgVCBYQJH9scFzK1Zg37FhCipcKR0&usqp=CAU"
+                  alt="" style="height: 470px; width: 660px;" class="img-fluid">
+              </div>
+
+              <div class="col-md-6 align-items-center ">
+                <div class="card-body bg-dark">
+                  <div class=" align-items-center mb-3 pb-1 text-white ">
+                    <img src="images/logo.png" alt="" class="img-fluid" style="width: 30px; height: 30px;">
+                    <h2 class="text-success text-center m-0 px-3">RegisterL</h2>
+                    <% if(message.length >0){ %>
+                      <div class="alert alert-danger">
+                        <%= message %>
+                      </div>
+                    <%}%>
+                    <form action="/admininsert" method="post" enctype="multipart/form-data">
+                      <div class="mb-4 text-white">
+                        <label class="form-label">name</label>
+                        <input type="name" name="name" placeholder="name" class="form-control">
+                      </div>
+                      <div class="mb-4 text-white">
+                        <label class="form-label">Email address</label>
+                        <input type="email" name="email" placeholder="email" class="form-control">
+                      </div>
+                      <div class="mb-4 text-white">
+                        <label class="form-label">password</label>
+                        <input type="password" name="password" placeholder="password" class="form-control">
+                      </div>
+                      <div class="mb-4 text-white">
+                        <label class="form-label">confirm password</label>
+                        <input type="password" name="cpassword" placeholder="confirm password" class="form-control">
+                      </div>
+                      <div class="mb-4 text-center">
+                        <label>Images</label>
+                        <input type="file" name="image" class="form-control">
+                      </div>
+                      <div class="mb-4 text-center">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                      </div>
+
+                      <div clas="text-center">
+                        <p class="text-center">register form</p>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!--conatiner end-->
+
+  </div><!--container end-->
+  <%- include('../footer.ejs') %>
